@@ -1,0 +1,15 @@
+.venv/
+.vscode/
+logs/
+target/
+.env
+.user.yml
+package-lock.yml
+*.parquet
+*.duckdb
+dbt_packages/
+__pycache__/
+*.duckdb
+*.parquet
+*.wal
+.cache
