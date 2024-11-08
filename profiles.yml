@@ -13,5 +13,5 @@ postcard_company:
   outputs:
     local:
       type: duckdb
-      path: shared/db/datamart.duckdb
+      path: "{{ env_var('INPUT_FILES_PATH') }}/datamart.duckdb"
       schema: postcard_company
