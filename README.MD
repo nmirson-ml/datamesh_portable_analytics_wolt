@@ -79,7 +79,7 @@ For superset, the default credentials are set in the .env file: user = admin, pa
 ## Overview of architecture
 
 The docker process will begin building the application suite. The suite is made up of the following components, each within its own docker container:
-* **generator**: this is a collection of Python scripts that will generate, insert and export the example data, using [postcard-company-datamart]  (https://github.com/cnstlungu/postcard-company-datamart) project
+* **generator**: this is a collection of Python scripts that will generate, insert and export the example data, using [postcard-company-datamart](https://github.com/cnstlungu/postcard-company-datamart) project
 * **sqlmesh-dbt**: the data model, sourced from [postcard-company-datamart](https://github.com/cnstlungu/postcard-company-datamart) project
 * **superset**: this contains the web-based Business Intelligence application we will use to explore the data; exposed on port 8088.
 
