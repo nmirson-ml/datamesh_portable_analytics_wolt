@@ -83,8 +83,6 @@ The docker process will begin building the application suite. The suite is made 
 * **sqlmesh-dbt**: the data model, sourced from [postcard-company-datamart](https://github.com/cnstlungu/postcard-company-datamart) project
 * **superset**: this contains the web-based Business Intelligence application we will use to explore the data; exposed on port 8088.
 
-Once the docker building process has completed, we may open the Mage GUI (locally: localhost:6789) to view the orchestration of our tasks.
-
 
 After the DAGs have completed you can either analyze the data using the querying and visualization tools provided by Superset (available locally on port 8088), or query the Data Warehouse (available as a DuckDB Database)
 
