@@ -18,8 +18,9 @@ The data model is based on the [wolt_snack_store](https://github.com/nmirson-ml/
 ![Data Model](resources/data_model.png "Data Model")
 
 
-## Used as starting point were this two projects, one to run dbt on duckdb isntance, and the other to run sqlmesh on top of it and perform analytics and visualizations.   * [postcard-company-datamart](https://github.com/cnstlungu/postcard-company-datamart)
+### Used as starting point were these two projects:
 
+* [postcard-company-datamart](https://github.com/cnstlungu/postcard-company-datamart)
 * [portable-data-stack-sqlmesh](https://github.com/cnstlungu/portable-data-stack-sqlmesh)
 
 
@@ -37,21 +38,6 @@ The data model is based on the [wolt_snack_store](https://github.com/nmirson-ml/
     `docker compose up --build`
 
 4. Once the Docker suite has finished loading, open up [SQLMesh Web UI](http://localhost:8000)
-
-
-![SQLMesh UI](resources/sqlmesh_ui.png "SQLMesh UI")
-
-Click on *Plan* 
-
-![Apply changes](resources/apply_changes.png "Apply changes")
-
-Then *Apply Changes*
-
-![Changes applied](resources/changes_applied.png "Changes applied")
-
-Upon the changes being applied, you can query the datamart via the SQL interface:
-
-![Quick check](resources/quick_check.png "Quick check")
 
 5. To explore the data and build dashboards you can open the [Superset interface](http://localhost:8088)
 
