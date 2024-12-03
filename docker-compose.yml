@@ -1,12 +1,4 @@
 services:
-  generator:
-    build:
-      context: .
-      dockerfile: ./generator/Dockerfile
-    volumes:
-      - ./shared:/shared
-    environment:
-      INPUT_FILES_PATH: /shared/parquet
   sqlmesh-dbt:
     build:
       context: .
@@ -14,12 +6,9 @@ services:
     volumes:
       - ./shared:/shared
     environment:
-      INPUT_FILES_PATH: /shared/parquet
       DUCKDB_FILE_PATH: /shared/db/datamart.duckdb
     ports:
       - "8000:8000"
-    depends_on:
-      - generator
   superset:
     build:
       context: .

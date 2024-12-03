@@ -1,6 +1,7 @@
 # Portable Data Stack with SQLMesh
 
-This application is a containerized Analytics suite for an imaginary company selling postcards. The company sells both directly but also through resellers in the majority of European countries.
+This application is a containerized Analytics suite for analyzing the data from Wolt-Snack-Store project.
+
 
 ## Stack
 
@@ -11,22 +12,23 @@ This application is a containerized Analytics suite for an imaginary company sel
 
 ## Interested in the data model?
 
-Generation of example data and the underlying dbt-core model is available in the [postcard-company-datamart](https://github.com/cnstlungu/postcard-company-datamart) project.  
+The data model is based on the [wolt_snack_store](https://github.com/nmirson-ml/wolt_interview) project, which simulates a snack store's transactional data. The model follows a star schema design with fact and dimension tables to analyze customer purchases, items, promotions and time-based patterns.
+
 
 ![Data Model](resources/data_model.png "Data Model")
 
 
-## For other stacks, check the below:
-- [portable-data-stack-dagster](https://github.com/cnstlungu/portable-data-stack-dagster)
-- [portable-data-stack-airflow](https://github.com/cnstlungu/portable-data-stack-airflow)
-- [portable-data-stack-mage](https://github.com/cnstlungu/portable-data-stack-mage)
+## Used as starting point were this two projects, one to run dbt on duckdb isntance, and the other to run sqlmesh on top of it and perform analytics and visualizations.   * [postcard-company-datamart](https://github.com/cnstlungu/postcard-company-datamart)
+
+* [portable-data-stack-sqlmesh](https://github.com/cnstlungu/portable-data-stack-sqlmesh)
+
 
 ### System requirements
 * [Docker](https://docs.docker.com/engine/install/)
 
 ## Setup
 
-1. Rename `.env.example` file to `.env` and set your desired Superset password. Remember to never commit files containing passwords or any other sensitive information.
+1. Rename `.env.example` file to `.env` and set your desired Superset password.
 
 2. Rename `shared/db/datamart.duckdb.example` to `shared/db/datamart.duckdb` or init an empty database file there with that name.
 
@@ -62,16 +64,12 @@ Demo credentials are set in the .env file mentioned above.
 * SQLMesh: 8000
 * Superset: 8088
 
-Generated Parquet are saved in the **shared/parquet** folder.
-
-The data is fictional and automatically generated. Any similarities with existing persons, entities, products or businesses are purely coincidental.
+The data comes from the CSV files shared in Wolt-Snack-Store project. 
 
 ### General flow
 
-1. Test data is generated as Parquet files - using Python (generator)
-2. Data is import from parquet files to staging area in the Data Warehouse (DuckDB)
-3. The data is modelled, building fact and dimension tables, loading the Data Warehouse using SqlMesh (with the dbt adapter for model compatibility)
-4. Analyze and visually explore the data using Superset or directly querying the datamart via the SQL IDE provided by SQLMesh
+1. The data is modelled, building fact and dimension tables, loading the Data Warehouse using SqlMesh (with the dbt adapter for model compatibility)
+2. Analyze and visually explore the data using Superset or directly querying the datamart via the SQL IDE provided by SQLMesh
 
 For superset, the default credentials are set in the .env file: user = admin, password = admin
 
@@ -79,8 +77,7 @@ For superset, the default credentials are set in the .env file: user = admin, pa
 ## Overview of architecture
 
 The docker process will begin building the application suite. The suite is made up of the following components, each within its own docker container:
-* **generator**: this is a collection of Python scripts that will generate, insert and export the example data, using [postcard-company-datamart](https://github.com/cnstlungu/postcard-company-datamart) project
-* **sqlmesh-dbt**: the data model, sourced from [postcard-company-datamart](https://github.com/cnstlungu/postcard-company-datamart) project
+* **sqlmesh-dbt**: the data model, sourced from [wolt_snack_store](https://github.com/nmirson-ml/wolt_interview) project
 * **superset**: this contains the web-based Business Intelligence application we will use to explore the data; exposed on port 8088.
 
 
