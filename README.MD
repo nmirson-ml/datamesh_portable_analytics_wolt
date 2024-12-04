@@ -9,7 +9,7 @@ This application is a containerized Analytics suite for analyzing the data from 
 - SQLMesh using dbt adapter
 - Superset
 
-##Data Model
+## Data Model
 The data model is based on the [Wolt Snack Store Data Model](https://github.com/nmirson-ml/wolt_interview), which simulates Wolts Snack Store's transactional data. The model follows a star schema design with fact and dimension tables to analyze customer purchases, items, promotions and time-based patterns.
 
 
@@ -61,8 +61,8 @@ There are just a handful of first-time customers acquired through promotions, as
 Most first-time customers purchase non-promotional items, indicating promotions is not the main driver of new customers. These customers are buying items that are not on promotion as the ratio between promotional and non-promotional items is quite healthy.
 
 
-The full dashboard can be found [here](resources/wolt_snack_store_dashboard.pdf)
-
+The full dashboard {image} can be found [here](resources/wolt_snack_store_dashboard.pdf)
+Since it's locally stored in superset, the dashboard won't be available once the container is stopped or recreated. 
 
 
 ### System requirements
