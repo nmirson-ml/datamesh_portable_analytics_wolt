@@ -61,7 +61,7 @@ There are just a handful of first-time customers acquired through promotions, as
 Most first-time customers purchase non-promotional items, indicating promotions is not the main driver of new customers. These customers are buying items that are not on promotion as the ratio between promotional and non-promotional items is quite healthy.
 
 
-The full dashboard {image} can be found [here](resources/wolt_snack_store_dashboard.pdf)
+The full dashboard {image} can be found [here](resources/dashboard.png)
 Since it's locally stored in superset, the dashboard won't be available once the container is stopped or recreated. 
 
 
