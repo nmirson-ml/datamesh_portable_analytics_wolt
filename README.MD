@@ -16,53 +16,12 @@ The data model is based on the [Wolt Snack Store Data Model](https://github.com/
 ![Data Model](resources/model_diagram.png "Data Model")
 
 
-## Dashboard Posibilities. 
-
-For looking into metrics and the 2nd part of the excercise, a dashboard created using Superset allows to explore the data and build ad-hoc analysis. 
-
-
-![Main Categories](resources/main_categories.png "Main Categories")
-
-![Best Items](resources/best_items.png "Best Items")
-
-![Categories over time](resources/categories_over_time.png "Categories over time")
-
-"Crisp & Snacks" and "Chocolate" see consistent demand but surge during specific months (e.g., earlier months of the year).
-Categories like "Other Confectionary" experience sharp declines mid-year, reflecting seasonal trends or shifts in preferences.
-
-![Number of Promotions per Category](resources/number_of_promotions_per_category.png "Number of Promotions per Category")
-
-![Product Disponibility over Time](resources/product_disponibility_over_time.png "Product Disponibility over Time")
-
-
-When we think of categories, we can see that the most popular categories are "Crisps & Snacks" and "Chocolate".
-A big reason for this, is that these two categories have not just the most associated items but also the most promotions. 
-The best product, is "Funny-Frisch Kettle Chips Sweet Chilli & Red Pepper, 120g" and "Lay’s Salt & Vinegar Crisps, 150g" dominate as best sellers in the Crisps & Snacks Category
-
-
-![Poorly Performing Categories](resources/poorly_performing_categories.png "Poorly Performing Categories")
-
-Poor performance is observed in "Other Confectionary" and "Chocolate & Sweet Spreads", with declining sales over time and low product availability as seen in the poor-performance and availability-over-time charts. High prices and reduced consumer interest may contribute to this.
-
-
-
-![Correlation Item Matrix](resources/correlation_item_matrix.png "Correlation Item Matrix")
-
-In here we can see what are the items that are more often bought together. The correlation matrix highlights strong associations, such as between "Funny-Frisch Kettle Chips" variations and related snack items.
-
-
-![Promo Metrics](resources/promo_metrics.png "Promo Metrics")
-
-
-![Customer Acquisition and Promo Usage](resources/customer_acquisition_and_promo_usage.png "Customer Acquisition and Promo Usage")
-
-
-There are just a handful of first-time customers acquired through promotions, as evident in the "Customer Acquisition and Promotions" chart.
-Most first-time customers purchase non-promotional items, indicating promotions is not the main driver of new customers. These customers are buying items that are not on promotion as the ratio between promotional and non-promotional items is quite healthy.
-
-
-The full dashboard {image} can be found [here](resources/dashboard.png)
+The full dashboard -charts  can be found [here](resources/wolt_snack_store_dashboard.pdf)
 Since it's locally stored in superset, the dashboard won't be available once the container is stopped or recreated. 
+All the images are stored in the resources folder.
+
+It's also possible to run the queries directly in the SQLMesh UI. This triggers the dbt instance and creates all the data models.[SQLMesh Web UI](http://localhost:8000)
+
 
 
 ### System requirements
